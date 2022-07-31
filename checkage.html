@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check age</title>
+  <style>
+      #container{
+        margin:auto;
+        border: 1px solid purple;
+        height: 500px;
+        width: 30%;
+        margin-top: 60px;
+ background: linear-gradient(to bottom,#9c27b0,#8ecdff);
+ border-radius: 20px;
+    }
+    h1{
+        font-size: 18px;
+        text-align: center;
+        text-transform: capitalize;
+        color: white;
+        line-height: 22px;
+        margin-top: 20px;
+    }
+    #age{
+        margin-left: 75px;
+        margin-top: 30px;
+        height: 32px;
+        border-radius: 20px;
+        width: 250px;
+        border-color: black;
+        text-align: center;
+        font-weight: bold;
+    }
+    button{
+        height: 30px;
+        border-radius: 20px;
+        width: 100px;
+        margin-top: 30px;
+        margin-left: 150px;
+        font-weight: bold;
+    }
+    h2{
+        text-align: center;
+        color: white;
+        line-height: 22px;
+    }
+    #sec{
+        margin-top: 20px;
+    }
+    #dl{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    #sec1{
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <div id="container">
+    <h1>enter your age to check whether you are ready to drive in India or Not</h1>
+    <input type="number" id="age" placeholder="enter your age"><br>
+    <button onClick="myage()">Check</button>
+    <h2 id="display">Here you will get your answer</h2>
+    <button onClick="reset()" id="sec">Reset</button>
+    <h1 id="apply"></h1>
+    <button id="sec1"><a href="https://parivahan.gov.in/parivahan/en/content/driving-licence-0" id="dl" target="_blank">Apply for DL</a></button>
+    </div>
+</body>
+</html>
+<script>
+   let h2Tag=document.getElementById("display");
+   let h1Tag=document.getElementById("apply");
+    function myage(){
+        let enteredage=document.getElementById("age").value;
+        if(enteredage==""){
+            h2Tag.value="";
+        }
+        else if(enteredage>18){
+            h2Tag.innerText="You can drive in India!";
+            h1Tag.innerText="If you don't have Driving License Apply by clicking on the below button";
+        }else if(enteredage<18){
+            h2Tag.innerText="You can't drive in India!";
+            h1Tag.innerText="You are Not Eligible to apply for Driving License in India!";
+        }else if(enteredage==18){
+            h2Tag.innerText="You are just old to drive in India!";
+            h1Tag.innerText="You are just complete your 18yrs to drive in India then Please apply for Learning DL by clicking on below button";
+        }
+    }
+    function reset(){
+        let enteredage=document.getElementById("age").value="";
+        h2Tag.innerText="Here you will get your answer";
+        h1Tag.innerText="";
+    }
+  
+    
+</script>
